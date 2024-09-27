@@ -1,5 +1,6 @@
 
 
+
 const container = document.querySelector(".container");
 
 
@@ -17,3 +18,23 @@ for(let i = 0; i < rows; i++){
     }
 }
 
+
+// eventlistener 
+
+// refer each element of grid
+const gridItems = document.querySelectorAll(".grid-item");
+
+// set event listener for each grid item
+gridItems.forEach((item) => {
+    
+    // color the item when mouse enters
+    item.addEventListener('mouseover', () => {
+        item.style.backgroundColor = "black";
+    });
+
+    // deColor the item when mouse go out of the element
+    item.addEventListener('mouseout', () => {
+        item.style.backgroundColor = "white";
+    });
+
+});
