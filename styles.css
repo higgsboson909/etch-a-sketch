@@ -3,26 +3,58 @@
     padding: 0;
     margin: 0;
     font-family: monospace;
+    font-size: 16px;
+
 }
 
 body{
+    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
+}
+nav{
+    background-color: black;
+    padding: 15px;
+    margin: 0px 0 60px 0px;
+
 }
 h1{
+    color: white;
     text-align: center;
-    margin: 30px 0 40px 0px;
+    font-weight: 800;
+    font-size: 40px;
+}
+.game{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px
 }
 
-.container{
-    align-self: flex-start;
-    padding: 1px;
-    border: 1px solid;
+.menu{
+    width: 230px;
+    font-size: 16px;
     display: flex;
     flex-direction: column;
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 25px;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1px;
+    border: 1px solid;
+    border-radius: 5px;;
     width: 550px;
     height: 550px;
-    margin: auto;
+    margin-right: 30px;
 }
 
 .row-item{
@@ -35,44 +67,42 @@ h1{
     border: rgb(240, 244, 240) 1px solid;
 }
 
-.menu{
-    text-align: center;
-    display: flex;
-    width: 600px;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto 30px auto;
-    font-size: 16px;
-    flex-wrap: wrap;
-}
 
 .colors{
     display: flex;
+    flex-direction: column;
     gap: 10px;
-    justify-content: center;
     align-items: center;
 }
-.sizer{
-    text-align: center;
-    padding: 2px;
-    font-size: inherit;
+button{
+    border-radius: 5px;
+    width: 79%;
+    padding: 5px;
 }
-.random-color{
-    font-size: inherit;
-    padding: 2px;
+button:hover{
+    cursor: pointer;
 }
 
 #red{
     background-color: red;
+    height: 30px;;
+}
+#white{
+    height: 30px;;
+    background-color: white;
 }
 #green{
+    height: 30px;;
+
     background-color: green;
 }
 #blue{
+    height: 30px;;
     background-color: blue;
 }
-
-.colors button{
-    width: 30px;
-    height: 30px;
+#black{
+    height: 30px;;
+    background-color: black;
 }
+
+

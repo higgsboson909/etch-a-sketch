@@ -64,13 +64,20 @@ const color = document.querySelector(".colors");
 color.addEventListener("click", (event) => {
     let target = event.target;
     switch(target.id){
+        case "white":
+            colorText = "background-Color: white;";
+            break;
         case "red":
             colorText = "background-Color: red;";
             break;
         case "green":
             colorText = "background-Color: green;"
             break;
+        case "black":
+            colorText = "background-Color: black;";
+            break;
         case "blue":
             colorText = "background-Color: blue;"
+            break;
     }
 })
