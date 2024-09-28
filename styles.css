@@ -16,8 +16,19 @@ h1{
 }
 
 .container{
+    display: flex;
+    flex-direction: column;
     width: 550px;
     height: 550px;
     margin: auto;
-    border: solid 1px;
+}
+
+.row-item{
+    flex-grow: 1;
+    display: flex;
+}
+
+.column-item{
+    flex-grow: 1;
+    border: green 1px solid;
 }
