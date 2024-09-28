@@ -1,40 +1,72 @@
-
-
-
+// refer the container element
 const container = document.querySelector(".container");
 
+// default sizes 
+let squares = 16;
+const gridSize = 550;
 
-const rows = 16;
-const columns = 16;
+let gridItem;
 
-// for 16 by 16 square
+// create grid of size 16
+displayGrid(squares);
 
-for(let i = 0; i < rows; i++){
-    
-    for(let j = 0; j < columns; j++){
-        let gridItem = document.createElement("div");
-        gridItem.classList.add("grid-item");
-        container.appendChild(gridItem);        
+// pixel size
+function displayGrid(sq){
+    let pSize = (gridSize / sq) + "px";
+
+    for(let i = 0; i < sq; i++){
+
+        for(let j = 0; j < sq; j++){
+            gridItem = document.createElement("div");
+            gridItem.classList.add("grid-item");
+            container.appendChild(gridItem);
+        }
     }
+
+    // eventlistener 
+
+    // refer each element of grid
+    const gridItems = document.querySelectorAll(".grid-item");
+
+    // set event listener for each grid item
+    gridItems.forEach((item) => {
+        item.style.width = pSize;
+        item.style.height = pSize;
+        // color the item when mouse enters
+        item.addEventListener('mouseover', () => {
+            item.style.backgroundColor = "black";
+        });
+
+        // deColor the item when mouse go out of the element
+        item.addEventListener('mouseout', () => {
+            item.style.backgroundColor = "white";
+        });
+
+    });
+
 }
 
 
-// eventlistener 
+// button ask for squares per side 
+const sizeButton = document.querySelector("button");
 
-// refer each element of grid
-const gridItems = document.querySelectorAll(".grid-item");
+sizeButton.addEventListener('click', () => {
+    do{
+            squares = prompt("Change the number of squares per side (max: 100): ");
+            squares = +squares;
+            if((isNaN(squares) || squares < 1 || squares > 100)){
+                alert("Number must be between 1 & 100\nTry agian");
+            }
 
-// set event listener for each grid item
-gridItems.forEach((item) => {
+    }while(isNaN(squares) || squares < 1 || squares > 100);
     
-    // color the item when mouse enters
-    item.addEventListener('mouseover', () => {
-        item.style.backgroundColor = "black";
-    });
-
-    // deColor the item when mouse go out of the element
-    item.addEventListener('mouseout', () => {
-        item.style.backgroundColor = "white";
-    });
+    if(gridItem){
+        const allItems = document.querySelectorAll(".grid-item");
+        allItems.forEach((item) => {
+            container.removeChild(item);
+        })
+    }
+    displayGrid(squares);
 
 });
+
