@@ -64,7 +64,7 @@ h1{
 
 .column-item{
     flex-grow: 1;
-    border: rgb(240, 244, 240) 1px solid;
+    border: rgb(213, 215, 213) 1px solid;
 }
 
 
@@ -76,7 +76,7 @@ h1{
 }
 button{
     border-radius: 5px;
-    width: 79%;
+    width: 91%;
     padding: 5px;
 }
 button:hover{
@@ -89,6 +89,7 @@ button:hover{
 }
 #white{
     height: 30px;;
+
     background-color: white;
 }
 #green{

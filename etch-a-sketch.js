@@ -81,3 +81,11 @@ color.addEventListener("click", (event) => {
             break;
     }
 })
+
+const reset = document.querySelector(".reset");
+reset.addEventListener('click', () => {
+    const eachBox = document.querySelectorAll(".column-item");
+    eachBox.forEach((item) => {
+        item.style.backgroundColor = "white";
+    })
+}); 
