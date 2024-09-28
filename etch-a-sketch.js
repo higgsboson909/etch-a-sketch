@@ -2,6 +2,7 @@
 const container = document.querySelector(".container");
 const sizer = document.querySelector(".sizer");
 
+let colorText = "background-Color: red;";
 let rowItem;
 // default no. of squares per side
 let s = 16;
@@ -33,17 +34,14 @@ function doColor(size){
     const columns = document.querySelectorAll(".column-item")
     
     columns.forEach((item) => {
-        item.addEventListener('mouseover', () => {
-            item.style.cssText = "background-Color: red;";
+        item.addEventListener('click', () => {
+            item.style.cssText = colorText;
         });
     });
 }    
 
-
+// listen to "sizer" button
 sizer.addEventListener('click', () => {
-
-
-
     do{
         s = prompt("Change the no. of squares per side: ");
         s = +s;
@@ -51,7 +49,6 @@ sizer.addEventListener('click', () => {
             alert("Number must be b/w 1 and 100\nTry Agian");
         }
     }while(isNaN(s) || s > 100 || s < 1);    
-
 
         // refer all the classes inside the container
         const allItems = document.querySelectorAll(".row-item");
@@ -61,5 +58,19 @@ sizer.addEventListener('click', () => {
 
     doColor(s);
 
-    
 });
+
+const color = document.querySelector(".colors");
+color.addEventListener("click", (event) => {
+    let target = event.target;
+    switch(target.id){
+        case "red":
+            colorText = "background-Color: red;";
+            break;
+        case "green":
+            colorText = "background-Color: green;"
+            break;
+        case "blue":
+            colorText = "background-Color: blue;"
+    }
+})

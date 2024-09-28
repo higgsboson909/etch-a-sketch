@@ -62,13 +62,13 @@ h1{
     padding: 2px;
 }
 
-.red{
+#red{
     background-color: red;
 }
-.green{
+#green{
     background-color: green;
 }
-.blue{
+#blue{
     background-color: blue;
 }
 
