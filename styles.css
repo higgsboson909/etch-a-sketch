@@ -16,6 +16,8 @@ h1{
 }
 
 .container{
+    padding: 1px;
+    border: 1px solid;
     display: flex;
     flex-direction: column;
     width: 550px;
@@ -30,5 +32,9 @@ h1{
 
 .column-item{
     flex-grow: 1;
-    border: green 1px solid;
+    border: rgb(240, 244, 240) 1px solid;
+}
+
+.color{
+    background-color: red;
 }
