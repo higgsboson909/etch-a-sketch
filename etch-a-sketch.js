@@ -3,9 +3,12 @@ const container = document.querySelector(".container");
 const button = document.querySelector("button");
 
 let rowItem;
-let size = 15;
+// default no. of squares per side
+let s = 16;
 let columnItem;
 // default size of grid to 16
+doColor(s);
+function doColor(size){
     for(let i = 0; i < size; i++){
     
         // create i no. of rows inside the container
@@ -25,8 +28,8 @@ let columnItem;
             rowItem.appendChild(columnItem);
         }
     }
-    
-    // select all boxes
+
+        // select all boxes
     const columns = document.querySelectorAll(".column-item")
     
     columns.forEach((item) => {
@@ -34,6 +37,8 @@ let columnItem;
             item.style.cssText = "background-Color: red;";
         });
     });
+}    
+
 
 button.addEventListener('click', () => {
 
@@ -48,6 +53,13 @@ button.addEventListener('click', () => {
     }while(isNaN(s) || s > 100 || s < 1);    
 
 
+        // refer all the classes inside the container
+        const allItems = document.querySelectorAll(".row-item");
+        allItems.forEach((item) => {
+            container.removeChild(item);
+        });
+
+    doColor(s);
 
     
 });
