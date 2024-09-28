@@ -1,6 +1,6 @@
 // refer the container 
 const container = document.querySelector(".container");
-const button = document.querySelector("button");
+const sizer = document.querySelector(".sizer");
 
 let rowItem;
 // default no. of squares per side
@@ -40,7 +40,7 @@ function doColor(size){
 }    
 
 
-button.addEventListener('click', () => {
+sizer.addEventListener('click', () => {
 
 
 

@@ -5,17 +5,17 @@
     font-family: monospace;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+}
 h1{
     text-align: center;
     margin: 30px 0 40px 0px;
 }
 
-.sizer{
-    text-align: center;
-    margin-bottom: 30px;
-}
-
 .container{
+    align-self: flex-start;
     padding: 1px;
     border: 1px solid;
     display: flex;
@@ -35,6 +35,44 @@ h1{
     border: rgb(240, 244, 240) 1px solid;
 }
 
-.color{
+.menu{
+    text-align: center;
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 30px auto;
+    font-size: 16px;
+    flex-wrap: wrap;
+}
+
+.colors{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.sizer{
+    text-align: center;
+    padding: 2px;
+    font-size: inherit;
+}
+.random-color{
+    font-size: inherit;
+    padding: 2px;
+}
+
+.red{
     background-color: red;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: blue;
+}
+
+.colors button{
+    width: 30px;
+    height: 30px;
 }
