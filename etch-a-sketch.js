@@ -2,13 +2,48 @@
 const container = document.querySelector(".container");
 const sizer = document.querySelector(".sizer");
 
+// no random color by default
+let isRandom = false;
+
+// default text for coloring grid boxes
 let colorText = "background-Color: red;";
+
+let columnItem;
 let rowItem;
+
+// refer all the color options
+const redBorder = document.querySelector("#red");
+const whiteBorder = document.querySelector("#white");
+const greenBorder = document.querySelector("#green");
+const blueBorder = document.querySelector("#blue");
+const blackBorder = document.querySelector("#black");
+const randomButton = document.querySelector(".random-color");
+
+
+
+function resetBtnSize(){      // reset size of color btns
+    redBorder.style.height = "30px";
+    whiteBorder.style.height = "30px";
+    greenBorder.style.height = "30px";
+    blueBorder.style.height = "30px";
+    blackBorder.style.height = "30px";
+    randomButton.style.border = "0";
+
+}
 // default no. of squares per side
 let s = 16;
-let columnItem;
-// default size of grid to 16
-doColor(s);
+
+
+
+// calculate color randomly
+function getRandomColor(){
+    const a = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    const c = Math.floor(Math.random() * 250);
+    return `background-Color: rgb(${a}, ${b}, ${c});`;
+}
+
+// create grid & color the grid
 function doColor(size){
     for(let i = 0; i < size; i++){
     
@@ -33,9 +68,16 @@ function doColor(size){
         // select all boxes
     const columns = document.querySelectorAll(".column-item")
     
+    // listen for mouse activity
     columns.forEach((item) => {
-        item.addEventListener('click', () => {
-            item.style.cssText = colorText;
+        item.addEventListener('mouseover', () => {
+            if(isRandom){       // for random coloring
+                item.style.cssText = getRandomColor();
+            }
+            else{
+                item.style.cssText = colorText;
+
+            }
         });
     });
 }    
@@ -56,22 +98,16 @@ sizer.addEventListener('click', () => {
 
 });
 
-const redBorder = document.querySelector("#red");
-const whiteBorder = document.querySelector("#white");
-const greenBorder = document.querySelector("#green");
-const blueBorder = document.querySelector("#blue");
-const blackBorder = document.querySelector("#black");
 
 
+// optional coloring of boxes
 const color = document.querySelector(".colors");
 color.addEventListener("click", function (event){
+    isRandom = false;       // finish the random coloring
     let target = event.target;
     
-    redBorder.style.height = "30px";
-    whiteBorder.style.height = "30px";
-    greenBorder.style.height = "30px";
-    blueBorder.style.height = "30px";
-    blackBorder.style.height = "30px";
+    resetBtnSize();    // reset the color buttons' size
+
 
     switch(target.id){
         case "white":
@@ -93,11 +129,13 @@ color.addEventListener("click", function (event){
             break;
         case "blue":
             blueBorder.style.height = "40px";
-            colorText = "background-Color: blue;"
+            colorText = "background-Color: blue;";
             break;
     }
 })
 
+
+// only remove the coloring
 const reset = document.querySelector(".reset");
 reset.addEventListener('click', () => {
     const eachBox = document.querySelectorAll(".column-item");
@@ -105,3 +143,13 @@ reset.addEventListener('click', () => {
         item.style.backgroundColor = "white";
     })
 }); 
+
+// random color button
+randomButton.addEventListener('click', () => {
+    resetBtnSize();    // RESET BUTTON SIZE
+    randomButton.style.border = "white 3px solid";
+    isRandom = true;
+
+});
+
+doColor(s);
