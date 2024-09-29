@@ -109,8 +109,6 @@ button{
     border: black;
     background-color: black;
 }
-.reset{
-}
 
 .random-color, .reset, .sizer{
     background-color: black;;
@@ -118,5 +116,5 @@ button{
     color: white;
 }
 .random-color:hover, .reset:hover, .sizer:hover{
-    border: 2px solid white;
+    background-color: rgb(70, 69, 69);
 }
