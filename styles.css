@@ -87,7 +87,7 @@ button{
 #red{
     border: red;
     background-color: red;
-    height: 30px;
+    height: 40px;
 }
 #white{
     height: 30px;
@@ -116,5 +116,6 @@ button{
     color: white;
 }
 .random-color:hover, .reset:hover, .sizer:hover{
-    background-color: rgb(70, 69, 69);
+    opacity: 0.85;
+    
 }

@@ -76,7 +76,7 @@ function doColor(size){
             }
             else{
                 item.style.cssText = colorText;
-
+   
             }
         });
     });
