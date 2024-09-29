@@ -60,23 +60,43 @@ sizer.addEventListener('click', () => {
 
 });
 
+const redBorder = document.querySelector("#red");
+const whiteBorder = document.querySelector("#white");
+const greenBorder = document.querySelector("#green");
+const blueBorder = document.querySelector("#blue");
+const blackBorder = document.querySelector("#black");
+
+
 const color = document.querySelector(".colors");
-color.addEventListener("click", (event) => {
+color.addEventListener("click", function (event){
     let target = event.target;
+    
+    redBorder.style.height = "30px";
+    whiteBorder.style.height = "30px";
+    greenBorder.style.height = "30px";
+    blueBorder.style.height = "30px";
+    blackBorder.style.height = "30px";
+
     switch(target.id){
         case "white":
             colorText = "background-Color: white;";
+            whiteBorder.style.height = "39px";
             break;
         case "red":
             colorText = "background-Color: red;";
+            redBorder.style.height = "39px";            
             break;
+            
         case "green":
+            greenBorder.style.height = "39px";
             colorText = "background-Color: green;"
             break;
         case "black":
+            blackBorder.style.height = "39px";
             colorText = "background-Color: black;";
             break;
         case "blue":
+            blueBorder.style.height = "39px";
             colorText = "background-Color: blue;"
             break;
     }
