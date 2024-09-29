@@ -9,7 +9,11 @@ let isRandom = false;
 let colorText = "background-Color: red;";
 
 let columnItem;
+let eachBox;
 let rowItem;
+
+let opacityCount;
+let sum = 0.1;
 
 // refer all the color options
 const redBorder = document.querySelector("#red");
@@ -31,7 +35,7 @@ function resetBtnSize(){      // reset size of color btns
 
 }
 // default no. of squares per side
-let s = 16;
+let s = 2;
 
 
 
@@ -64,23 +68,29 @@ function doColor(size){
             rowItem.appendChild(columnItem);
         }
     }
-
-        // select all boxes
-    const columns = document.querySelectorAll(".column-item")
     
+    // select all boxes
+    eachBox = document.querySelectorAll(".column-item");
+     
     // listen for mouse activity
-    columns.forEach((item) => {
+    eachBox.forEach(function (item){
+        item.opacityCount = 0;      // set opacity 0 for item with mouseActivity
         item.addEventListener('mouseover', () => {
             if(isRandom){       // for random coloring
                 item.style.cssText = getRandomColor();
             }
             else{
+                item.opacityCount = sum + item.opacityCount;
+                item.style.border = "1px solid black";
                 item.style.cssText = colorText;
-   
+                item.style.opacity = item.opacityCount;
             }
         });
-    });
+    })
+
 }    
+
+
 
 // listen to "sizer" button
 sizer.addEventListener('click', () => {
@@ -103,10 +113,18 @@ sizer.addEventListener('click', () => {
 // optional coloring of boxes
 const color = document.querySelector(".colors");
 color.addEventListener("click", function (event){
+
+
+    // make the opacity count for each item inside the back to zero; 
+    eachBox.forEach((item) => {
+        item.opacityCount = 0;
+    });
     isRandom = false;       // finish the random coloring
     let target = event.target;
     
     resetBtnSize();    // reset the color buttons' size
+
+
 
 
     switch(target.id){
@@ -138,9 +156,10 @@ color.addEventListener("click", function (event){
 // only remove the coloring
 const reset = document.querySelector(".reset");
 reset.addEventListener('click', () => {
-    const eachBox = document.querySelectorAll(".column-item");
     eachBox.forEach((item) => {
         item.style.backgroundColor = "white";
+        // make the opacity count for each item back to zero;
+        item.opacityCount = 0;
     })
 }); 
 
@@ -153,3 +172,6 @@ randomButton.addEventListener('click', () => {
 });
 
 doColor(s);
+
+
+
