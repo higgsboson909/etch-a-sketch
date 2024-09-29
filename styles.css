@@ -5,6 +5,7 @@
     margin: 0;
     box-sizing: border-box;
 
+
 }
 
 body{
@@ -41,17 +42,15 @@ h1{
     border: solid 1px;
     border-radius: 5px;
     padding: 25px;
-    align-items: center;
     justify-content: space-around;
-
+    align-items: center;
+    text-align: center;
 }
 
 .container{
     background-color: white;
     display: flex;
     flex-direction: column;
-    padding: 1px;
-    border: 1px solid;
     border-radius: 5px;;
     width: 550px;
     height: 550px;
@@ -64,10 +63,10 @@ h1{
     display: flex;
 }
 
-.column-item{
+.column-item{ 
+    box-shadow: 0 0 0 0.2px black;
     flex-grow: 1;
 }
-
 
 .colors{
     display: flex;

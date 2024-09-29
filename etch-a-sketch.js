@@ -62,8 +62,8 @@ function doColor(size){
         // create j no. of columns for each row
         for(let j = 0; j < size; j++){
             columnItem = document.createElement("div");
-            columnItem.classList.add("column-item");
-        
+            columnItem.classList.add("column-item");      
+
             // append the columns inside each i row
             rowItem.appendChild(columnItem);
         }
@@ -75,22 +75,22 @@ function doColor(size){
     // listen for mouse activity
     eachBox.forEach(function (item){
         item.opacityCount = 0;      // set opacity 0 for item with mouseActivity
-        item.addEventListener('mouseover', () => {
+        item.addEventListener('mouseenter', () => {
+
             if(isRandom){       // for random coloring
                 item.style.cssText = getRandomColor();
+
             }
             else{
                 item.opacityCount = sum + item.opacityCount;
-                item.style.border = "1px solid black";
                 item.style.cssText = colorText;
                 item.style.opacity = item.opacityCount;
+
             }
         });
     })
 
 }    
-
-
 
 // listen to "sizer" button
 sizer.addEventListener('click', () => {
@@ -109,7 +109,6 @@ sizer.addEventListener('click', () => {
 });
 
 
-
 // optional coloring of boxes
 const color = document.querySelector(".colors");
 color.addEventListener("click", function (event){
@@ -123,9 +122,6 @@ color.addEventListener("click", function (event){
     let target = event.target;
     
     resetBtnSize();    // reset the color buttons' size
-
-
-
 
     switch(target.id){
         case "white":
@@ -152,12 +148,12 @@ color.addEventListener("click", function (event){
     }
 })
 
-
 // only remove the coloring
 const reset = document.querySelector(".reset");
 reset.addEventListener('click', () => {
     eachBox.forEach((item) => {
         item.style.backgroundColor = "white";
+
         // make the opacity count for each item back to zero;
         item.opacityCount = 0;
     })
