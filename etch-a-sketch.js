@@ -35,7 +35,7 @@ function resetBtnSize(){      // reset size of color btns
 
 }
 // default no. of squares per side
-let s = 2;
+let s = 16;
 
 
 
