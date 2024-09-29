@@ -88,7 +88,7 @@ button:hover{
 #red{
     border: red;
     background-color: red;
-    height: 30px;;
+    height: 40px;
 }
 #white{
     height: 30px;
@@ -97,13 +97,13 @@ button:hover{
 }
 #green{
     border: green;
-    height: 30px;;
+    height: 30px;
 
     background-color: green;
 }
 #blue{
     border: blue;
-    height: 30px;;
+    height: 30px;
     background-color: blue;
 }
 #black{

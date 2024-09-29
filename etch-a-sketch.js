@@ -46,15 +46,11 @@ sizer.addEventListener('click', () => {
         s = prompt("Change the no. of squares per side: ");
         s = +s;
         if(isNaN(s) || s > 100 || s < 0){
-            alert("Number must be b/w 1 and 100\nTry Agian");
+            alert("Number must be b/w 1 and 100\nTry Again");
         }
     }while(isNaN(s) || s > 100 || s < 1);    
 
-        // refer all the classes inside the container
-        const allItems = document.querySelectorAll(".row-item");
-        allItems.forEach((item) => {
-            container.removeChild(item);
-        });
+    container.innerHTML = "";      // remove existing grid before creating new one
 
     doColor(s);
 
@@ -80,23 +76,23 @@ color.addEventListener("click", function (event){
     switch(target.id){
         case "white":
             colorText = "background-Color: white;";
-            whiteBorder.style.height = "39px";
+            whiteBorder.style.height = "40px";
             break;
         case "red":
             colorText = "background-Color: red;";
-            redBorder.style.height = "39px";            
+            redBorder.style.height = "40px";            
             break;
             
         case "green":
-            greenBorder.style.height = "39px";
+            greenBorder.style.height = "40px";
             colorText = "background-Color: green;"
             break;
         case "black":
-            blackBorder.style.height = "39px";
+            blackBorder.style.height = "40px";
             colorText = "background-Color: black;";
             break;
         case "blue":
-            blueBorder.style.height = "39px";
+            blueBorder.style.height = "40px";
             colorText = "background-Color: blue;"
             break;
     }
