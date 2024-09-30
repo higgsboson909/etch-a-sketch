@@ -13,7 +13,7 @@ let eachBox;
 let rowItem;
 
 let opacityCount;
-let sum = 0.1;
+let sum = 0.18;
 
 // refer all the color options
 const redBorder = document.querySelector("#red");
