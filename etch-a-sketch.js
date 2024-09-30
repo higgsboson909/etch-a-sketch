@@ -35,7 +35,7 @@ function resetBtnSize(){      // reset size of color btns
 
 }
 // default no. of squares per side
-let s = 16;
+let s = 2;
 
 
 
@@ -62,7 +62,8 @@ function doColor(size){
         // create j no. of columns for each row
         for(let j = 0; j < size; j++){
             columnItem = document.createElement("div");
-            columnItem.classList.add("column-item");      
+            columnItem.classList.add("column-item");    
+            columnItem.classList.add("box-border");  
 
             // append the columns inside each i row
             rowItem.appendChild(columnItem);
@@ -154,9 +155,13 @@ reset.addEventListener('click', () => {
     eachBox.forEach((item) => {
         item.style.backgroundColor = "white";
 
-        // make the opacity count for each item back to zero;
+        // make the opacity of white color 1 so that the grid looks fully reset
+        item.style.opacity = 1;
+
+        // on mouse activity over rest button the opacity for each item is reset
         item.opacityCount = 0;
     })
+
 }); 
 
 // random color button
@@ -167,7 +172,7 @@ randomButton.addEventListener('click', () => {
 
 });
 
-doColor(s);
+doColor(10);
 
 
 
